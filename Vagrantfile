@@ -15,6 +15,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network 'forwarded_port', guest: 80, host: 8080
   config.vm.network 'forwarded_port', guest: 8125, host: 8125, protocol: 'udp'
   config.vm.network 'forwarded_port', guest: 8126, host: 8126
+  config.vm.network 'forwarded_port', guest: 2003, host: 2003
+
 
   config.vm.provision 'chef_solo' do |chef|
     chef.add_recipe 'apt'

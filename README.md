@@ -9,6 +9,12 @@ You need to have [Vagrant installed](http://www.vagrantup.com/).
 	$ vagrant up
 	$ vagrant ssh
 
+Then after provisioning I had to run this on the guest machine as root:
+
+    pip install 'Twisted<12.0'
+
+to get anything to work. Then I modified /opt/graphite/conf/carbon.conf to have `USER` set to `www-data` and `LINE_RECEIVER_INTERFACE` to `0.0.0.0`.
+
 ## Graphite
 	$ open http://localhost:8080
 Graphite's credentials default to username `root` and password `root`.
